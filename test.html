@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .outer {
+        background-color: lightblue;
+        width: 200px; /* 外層div的寬度 */
+        height: 200px;
+      }
+      .middle {
+        background-color: lightcoral;
+        /* 沒有設置寬高 */
+      }
+      .inner {
+        height: 100%;
+        background-color: lightgreen;
+        /* 沒有設置寬高 */
+      }
+    </style>
+    <title>Nested DIVs</title>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">Inner content</div>
+      </div>
+    </div>
+  </body>
+</html>

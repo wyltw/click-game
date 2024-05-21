@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$white: #ffffffff;
+$linen: #f5ede2ff;
+$linen-shadow: rgba(245, 237, 226, 0.577);
+$rose-taupe: #785964ff;
+$steel-blue: #0a81d1ff;
+$berkeley-blue: #1e3a5fff;
+
+//reset and basic style
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.app {
+  width: 60%;
+  height: 100%;
+
+  font-family: "Poppins", sans-serif;
+}
+
+//keyframes
+
+@keyframes fade-out {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 15%;
+  }
+}
+
+@keyframes self-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// title screen
+.title-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: #f5ede2;
+  opacity: 1;
+  background-image: radial-gradient(#1e3a5f 2px, transparent 2px),
+    radial-gradient(#1e3a5f 2px, #f5ede2 2px);
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px;
+  &__title {
+    max-width: 100%;
+    object-fit: contain;
+  }
+  &__img {
+    max-width: 50%;
+    object-fit: contain;
+    animation: self-rotate 10s linear infinite;
+  }
+  &__text {
+    margin-top: 100px;
+    color: $rose-taupe;
+    font-size: 40px;
+    font-weight: 500;
+    animation: fade-out 2s linear infinite alternate;
+  }
+}
+
+.first-heading {
+  margin-top: 35px;
+}
