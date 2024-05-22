@@ -2,7 +2,7 @@
 
 $white: #ffffffff;
 $linen: #f5ede2ff;
-$linen-shadow: rgba(245, 237, 226, 0.577);
+$linen-shadow: rgba(#f5ede2ff, 0.577);
 $rose-taupe: #785964ff;
 $steel-blue: #0a81d1ff;
 $berkeley-blue: #1e3a5fff;
@@ -20,12 +20,18 @@ html {
   display: flex;
   justify-content: center;
   align-items: stretch;
+  background-color: #f5ede2;
+  opacity: 1;
+  background-image: radial-gradient(#1e3a5f 2px, transparent 2px), radial-gradient(#1e3a5f 2px, #f5ede2 2px);
+  background-size: 80px 80px;
+  background-position:
+    0 0,
+    40px 40px;
 }
 
 .app {
   width: 60%;
   height: 100%;
-
   font-family: "Poppins", sans-serif;
 }
 
@@ -40,7 +46,7 @@ html {
   }
 }
 
-@keyframes self-rotate {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }
@@ -49,36 +55,47 @@ html {
   }
 }
 
+//main
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
 // title screen
 .title-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  background-color: #f5ede2;
-  opacity: 1;
-  background-image: radial-gradient(#1e3a5f 2px, transparent 2px),
-    radial-gradient(#1e3a5f 2px, #f5ede2 2px);
-  background-size: 80px 80px;
-  background-position: 0 0, 40px 40px;
+
   &__title {
     max-width: 100%;
     object-fit: contain;
   }
   &__img {
-    max-width: 50%;
+    max-width: 100%;
     object-fit: contain;
-    animation: self-rotate 10s linear infinite;
+    animation: spin 10s linear infinite;
   }
   &__text {
-    margin-top: 100px;
+    margin-top: 75px;
+    padding: 50px 0;
     color: $rose-taupe;
     font-size: 40px;
-    font-weight: 500;
-    animation: fade-out 2s linear infinite alternate;
+    font-weight: 400;
+    animation: fade-out 3s linear infinite alternate;
   }
 }
 
+//tutorial screen
+
 .first-heading {
-  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  margin: 35px 0;
+}
+
+.hidden {
+  display: none;
 }

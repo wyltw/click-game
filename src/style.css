@@ -11,6 +11,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: stretch;
+  background-color: #f5ede2;
+  opacity: 1;
+  background-image: radial-gradient(#1e3a5f 2px, transparent 2px), radial-gradient(#1e3a5f 2px, #f5ede2 2px);
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px;
 }
 
 .app {
@@ -27,7 +32,7 @@ html {
     opacity: 15%;
   }
 }
-@keyframes self-rotate {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }
@@ -35,34 +40,41 @@ html {
     transform: rotate(360deg);
   }
 }
+main {
+  display: flex;
+  justify-content: center;
+}
+
 .title-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  background-color: #f5ede2;
-  opacity: 1;
-  background-image: radial-gradient(#1e3a5f 2px, transparent 2px), radial-gradient(#1e3a5f 2px, #f5ede2 2px);
-  background-size: 80px 80px;
-  background-position: 0 0, 40px 40px;
 }
 .title-screen__title {
   max-width: 100%;
   object-fit: contain;
 }
 .title-screen__img {
-  max-width: 50%;
+  max-width: 100%;
   object-fit: contain;
-  animation: self-rotate 10s linear infinite;
+  animation: spin 10s linear infinite;
 }
 .title-screen__text {
-  margin-top: 100px;
+  margin-top: 75px;
+  padding: 50px 0;
   color: #785964;
   font-size: 40px;
-  font-weight: 500;
-  animation: fade-out 2s linear infinite alternate;
+  font-weight: 400;
+  animation: fade-out 3s linear infinite alternate;
 }
 
 .first-heading {
-  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  margin: 35px 0;
+}
+
+.hidden {
+  display: none;
 }

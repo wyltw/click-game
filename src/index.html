@@ -5,18 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cookie Clicker</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js" defer></script>
   </head>
   <body class="app">
-    <section class="title-screen">
-      <h1 class="first-heading">
-        <img
-          src="./assets/title.png"
-          class="title-screen__title"
-          alt="Cookie Clicker"
-        />
-      </h1>
-      <img class="title-screen__img" src="./assets/phase1.png" alt="cookie" />
-      <p class="title-screen__text">Press to Start</p>
-    </section>
+    <h1 class="first-heading">
+      <img
+        src="./assets/title.png"
+        class="title-screen__title"
+        alt="Cookie Clicker"
+      />
+    </h1>
+
+    <main class="main">
+      <section class="title-screen">
+        <img class="title-screen__img" src="./assets/phase1.png" alt="cookie" />
+        <p class="title-screen__text">Press to <b>Start</b></p>
+      </section>
+      <section class="tutorial hidden">
+        <h1>test</h1>
+        <button class="start">New Game</button>
+        <button class="record">Record</button>
+      </section>
+    </main>
   </body>
 </html>
