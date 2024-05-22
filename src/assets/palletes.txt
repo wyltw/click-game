@@ -1,1 +1,4 @@
 https://coolors.co/ffffff-f5ede2-785964-0a81d1-1e3a5f
+
+background: rgb(2,0,36);
+background: linear-gradient(307deg, rgba(2,0,36,1) 0%, rgba(30,58,95,1) 70%);

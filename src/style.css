@@ -11,6 +11,15 @@ html {
   display: flex;
   justify-content: center;
   align-items: stretch;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(307deg, rgb(2, 0, 36) 0%, rgb(30, 58, 95) 70%);
+}
+
+.app {
+  width: 60%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0px 0px 80px 10px rgba(147, 142, 136, 0.3);
   background-color: #f5ede2;
   opacity: 1;
   background-image: radial-gradient(#1e3a5f 2px, transparent 2px), radial-gradient(#1e3a5f 2px, #f5ede2 2px);
@@ -18,10 +27,9 @@ html {
   background-position: 0 0, 40px 40px;
 }
 
-.app {
-  width: 60%;
-  height: 100%;
-  font-family: "Poppins", sans-serif;
+button {
+  border: initial;
+  background-color: initial;
 }
 
 @keyframes fade-out {
@@ -40,7 +48,14 @@ html {
     transform: rotate(360deg);
   }
 }
-main {
+.first-heading {
+  display: flex;
+  justify-content: center;
+  margin: 35px 0;
+}
+
+.container {
+  height: calc(100% - 136px);
   display: flex;
   justify-content: center;
 }
@@ -69,10 +84,40 @@ main {
   animation: fade-out 3s linear infinite alternate;
 }
 
-.first-heading {
+.main-menu {
+  height: 100%;
+  padding: 0 20%;
   display: flex;
-  justify-content: center;
-  margin: 35px 0;
+  flex-direction: column;
+}
+.main-menu__title {
+  color: #14263e;
+}
+.main-menu__desc {
+  margin-top: 20px;
+  color: #1e3a5f;
+  font-size: 20px;
+  line-height: 1.7;
+}
+.main-menu__buttons {
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+.main-menu__btn {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #5e454e;
+  color: rgba(245, 237, 226, 0.8);
+  font-size: 18px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+.main-menu__btn:hover, .main-menu__btn:focus {
+  background-color: #785964;
+  color: #f5ede2;
+  cursor: pointer;
 }
 
 .hidden {
