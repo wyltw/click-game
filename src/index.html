@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cookie Clicker</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <script src="./index.js" defer></script>
   </head>
   <body class="app">
@@ -22,21 +26,24 @@
         <p class="title-screen__text">Press to <b>Start</b></p>
       </section>
       <section class="main-menu hidden">
-        <h2 class="main-menu__title">遊戲規則</h2>
-        <p class="main-menu__desc">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-          ex. Non porro aut placeat aliquid molestias nisi tempore repellendus
-          nam amet esse quibusdam quae sequi sit mollitia, minima reprehenderit!
-          Quos!
-        </p>
+        <div class="rules">
+          <h2 class="rules__title">
+            <i class="rules__icon fa-solid fa-pencil"></i>遊戲規則
+          </h2>
+          <p class="rules__desc">在時限內盡可能的快速點擊餅乾</p>
+        </div>
         <div class="main-menu__buttons">
-          <button class="main-menu__btn main-menu__btn--start">開始遊戲</button>
+          <button class="main-menu__btn main-menu__btn--start">
+            <i class="main-menu__icon fa-solid fa-play"></i>開始遊戲
+          </button>
           <button class="main-menu__btn main-menu__btn--record">
-            得分記錄
+            <i class="main-menu__icon fa-solid fa-ranking-star"></i>得分記錄
           </button>
         </div>
       </section>
-      <section class="game-screen"></section>
+      <section class="game-screen hidden">
+        <span class="startTimer"></span>
+      </section>
     </main>
   </body>
 </html>

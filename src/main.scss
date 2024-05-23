@@ -22,24 +22,21 @@ html {
   justify-content: center;
   align-items: stretch;
   background: rgb(2, 0, 36);
-  background: linear-gradient(
-    307deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(30, 58, 95, 1) 70%
-  );
+  background: linear-gradient(307deg, rgba(2, 0, 36, 1) 0%, rgba(30, 58, 95, 1) 70%);
 }
 
 .app {
   width: 60%;
   height: 100%;
   font-family: "Poppins", sans-serif;
-  box-shadow: 0px 0px 80px 10px rgba(#938e88, 0.3);
+  box-shadow: 0px 0px 10px 0px rgba(#938e8850, 1);
   background-color: #f5ede2;
   opacity: 1;
-  background-image: radial-gradient(#1e3a5f 2px, transparent 2px),
-    radial-gradient(#1e3a5f 2px, #f5ede2 2px);
+  background-image: radial-gradient(#1e3a5f 2px, transparent 2px), radial-gradient(#1e3a5f 2px, #f5ede2 2px);
   background-size: 80px 80px;
-  background-position: 0 0, 40px 40px;
+  background-position:
+    0 0,
+    40px 40px;
 }
 
 button {
@@ -76,6 +73,7 @@ button {
 }
 
 .container {
+  width: 100%;
   height: calc(100% - 136px);
   display: flex;
   justify-content: center;
@@ -83,10 +81,11 @@ button {
 
 // title screen
 .title-screen {
+  flex: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
 
   &__title {
     max-width: 100%;
@@ -98,8 +97,8 @@ button {
     animation: spin 10s linear infinite;
   }
   &__text {
+    flex: 1;
     margin-top: 75px;
-    padding: 50px 0;
     color: $secondary;
     font-size: 40px;
     font-weight: 400;
@@ -109,23 +108,41 @@ button {
 
 //main menu
 
-.main-menu {
-  height: 100%;
-  padding: 0 20%;
-  display: flex;
-  flex-direction: column;
+.rules {
+  width: 60%;
+  align-self: center;
+  border: solid $secondary-shades 3px;
+  padding: 20px;
+  background-color: #f5ede2;
+  border-radius: 5px;
+  grid-column: 2/3;
+  grid-row: 1/2;
   &__title {
-    color: $accent-shades;
+    color: $accent;
   }
   &__desc {
     margin-top: 20px;
     color: $accent;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.7;
   }
+  &__icon {
+    margin-right: 7px;
+  }
+}
+
+.main-menu {
+  width: 100%;
+  height: 100%;
+  padding: 0 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 3.125rem;
+  // grid-template-columns: 1fr 6fr 1fr;
+  // grid-template-rows: 5fr 2fr 2fr;
+
   &__buttons {
-    margin-top: auto;
-    margin-bottom: 30px;
   }
   &__btn {
     margin-top: 10px;
@@ -144,7 +161,11 @@ button {
       cursor: pointer;
     }
   }
+  &__icon {
+    margin-right: 7px;
+  }
 }
+
 //utility
 .hidden {
   display: none;
