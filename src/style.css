@@ -67,6 +67,7 @@ button {
 .container {
   width: 100%;
   height: calc(100% - 136px);
+  padding: 75px 0;
   display: flex;
   justify-content: center;
 }
@@ -88,8 +89,8 @@ button {
   animation: spin 10s linear infinite;
 }
 .title-screen__text {
-  flex: 1;
-  margin-top: 75px;
+  margin-top: auto;
+  margin-bottom: auto;
   color: #785964;
   font-size: 40px;
   font-weight: 400;
