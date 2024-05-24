@@ -8,15 +8,13 @@
 html {
   width: 100%;
   height: 100%;
+  padding: 0 20%;
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  background: rgb(2, 0, 36);
   background: linear-gradient(307deg, rgb(2, 0, 36) 0%, rgb(30, 58, 95) 70%);
 }
 
 .app {
-  width: 60%;
+  width: 100%;
   height: 100%;
   font-family: "Poppins", sans-serif;
   box-shadow: 0px 0px 10px 0px #938e88;
@@ -67,7 +65,6 @@ button {
 .container {
   width: 100%;
   height: calc(100% - 136px);
-  padding: 75px 0;
   display: flex;
   justify-content: center;
 }
@@ -84,6 +81,7 @@ button {
   object-fit: contain;
 }
 .title-screen__img {
+  margin-top: 75px;
   max-width: 40%;
   object-fit: contain;
   animation: spin 10s linear infinite;
@@ -151,7 +149,7 @@ button {
 }
 
 .pregame-timer {
-  margin-top: 20px;
+  margin-top: 75px;
   color: #523d45;
   font-size: 10rem;
   animation: timer 1s infinite backwards;
@@ -164,6 +162,7 @@ button {
   align-items: center;
 }
 .game-screen__img {
+  margin-top: 75px;
   max-width: 40%;
   object-fit: contain;
 }

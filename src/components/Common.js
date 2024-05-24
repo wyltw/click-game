@@ -1,11 +1,13 @@
 //selector
 
-const titleScreenEl = document.querySelector(".title-screen");
-const mainMenuEl = document.querySelector(".main-menu");
-const mainMenuStartBtnEl = document.querySelector(".main-menu__btn--start");
-const gameScreenEl = document.querySelector(".game-screen");
-const gameScreenImgEl = document.querySelector(".game-screen__img");
-const pregameTimerEl = document.querySelector(".pregame-timer");
+export const titleScreenEl = document.querySelector(".title-screen");
+export const mainMenuEl = document.querySelector(".main-menu");
+export const mainMenuStartBtnEl = document.querySelector(
+  ".main-menu__btn--start"
+);
+export const gameScreenEl = document.querySelector(".game-screen");
+export const gameScreenImgEl = document.querySelector(".game-screen__img");
+export const pregameTimerEl = document.querySelector(".pregame-timer");
 
 //transition
 
