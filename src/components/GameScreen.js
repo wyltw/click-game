@@ -9,7 +9,7 @@ class GameState {
     this.isGaming = gaming;
     this.cookieHp = initialHp;
     this.currentCookieHp = initialHp;
-    this.currentPhase = 1;
+    // this.currentPhase = 1;
   }
 
   clickCookie(damage) {
@@ -24,8 +24,16 @@ class GameState {
 let newCookie = new GameState(cookieHp, false);
 //以餅乾血量的百分比作為圖片切換的依據
 
+const cookiePhases = [
+  { phase: 2, threshold: 80 },
+  { phase: 3, threshold: 60 },
+  { phase: 4, threshold: 40 },
+  { phase: 5, threshold: 20 },
+  { phase: 6, threshold: 0 },
+];
+
 const clickCookie = () => {
-  //當餅乾的破損狀態到達6
+  //當餅乾的血量小於20
   if (newCookie.cookieHpPercentage() < 20) {
     cookieHp = cookieHp * 1.5;
     newCookie = new GameState(cookieHp, false);
@@ -35,6 +43,24 @@ const clickCookie = () => {
   }
 
   newCookie.clickCookie(initialDamage);
+  for (const { phase, threshold } of cookiePhases) {
+    if (newCookie.cookieHpPercentage() <= threshold) {
+      gameScreenImgEl.src = `./assets/phase${phase}.png`;
+      // console.log(threshold, newCookie.cookieHpPercentage());
+      //不需要使用break，因為每次phase和threshold固定，雖然條件判斷通過，但是phase固定，所以圖片並不會改變。
+      //第一次
+      // 80 80
+
+      //第二次
+      // 60 80
+      // 60 60
+
+      // 第三次
+      // 40 80
+      // 40 60
+      // 40 40
+    }
+  }
 };
 
 gameScreenImgEl.addEventListener("click", clickCookie);
