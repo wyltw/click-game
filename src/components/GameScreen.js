@@ -1,4 +1,4 @@
-import { gameScreenImgEl } from "./Common.js";
+import { gameScreenImgEl, scoreBoxScoreTextEl } from "./Common.js";
 
 let cookieHp = 5;
 let initialDamage = 1;
@@ -21,7 +21,8 @@ class GameState {
   }
 }
 
-let newCookie = new GameState(cookieHp, false);
+let newCookie = new GameState(cookieHp, true);
+
 //以餅乾血量的百分比作為圖片切換的依據
 
 const cookiePhases = [
@@ -33,12 +34,13 @@ const cookiePhases = [
 ];
 
 const clickCookie = () => {
-  //當餅乾的血量小於20
-  if (newCookie.cookieHpPercentage() < 20) {
+  //當餅乾的血量小於0，創建新的實例並且增加血量和傷害，並且計算得分
+  if (newCookie.cookieHpPercentage() < 0) {
     cookieHp = cookieHp * 1.5;
-    newCookie = new GameState(cookieHp, false);
+    newCookie = new GameState(cookieHp, true);
     gameScreenImgEl.src = "./assets/phase1.png";
-    initialDamage++;
+    ++initialDamage;
+    ++scoreBoxScoreTextEl.textContent;
     console.log(newCookie, initialDamage);
   }
 
