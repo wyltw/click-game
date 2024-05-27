@@ -1,6 +1,6 @@
 import {
-  pregameTimerEl,
   scoreBoxTimerTextEl,
+  pregameTimerEl,
   transitionScreen,
   gameScreenEl,
   scoreScreenEl,
@@ -12,12 +12,12 @@ const startIngameTimer = () => {
       --scoreBoxTimerTextEl.textContent;
     } else {
       clearInterval(ingameTimerInterval);
+      transitionScreen(gameScreenEl, scoreScreenEl);
+      //比起遊戲結束時重置，開始重置也可以
+      scoreBoxTimerTextEl.classList.remove("timer-warning");
     }
     if (scoreBoxTimerTextEl.textContent < 4) {
       scoreBoxTimerTextEl.classList.add("timer-warning");
-    }
-    if (scoreBoxTimerTextEl.textContent == 0) {
-      transitionScreen(gameScreenEl, scoreScreenEl);
     }
   }, 1000);
 };
@@ -30,7 +30,7 @@ export const startPregameTimer = (showEl) => {
       pregameTimerEl.classList.add("hidden");
       showEl.classList.remove("hidden");
       clearInterval(pregameTimerInterval);
-      pregameTimerEl.textContent = startIngameTimer();
+      startIngameTimer();
     }
   }, 1000);
 };

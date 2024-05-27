@@ -1,27 +1,31 @@
-import { gameScreenImgEl, scoreBoxScoreTextEl } from "./Common.js";
+import {
+  gameScreenImgEl,
+  scoreBoxScoreTextEl,
+  mainMenuEl,
+  mainMenuStartBtnEl,
+  pregameTimerEl,
+  gameScreenEl,
+  COOKIE_HP,
+  INITIAL_DAMAGE,
+  transitionScreen,
+} from "./Common.js";
+import { startPregameTimer } from "./Timer.js";
+import { createCookie } from "./GameState.js";
+import { resetGame } from "./ResetGame.js";
 
-let cookieHp = 5;
-let initialDamage = 1;
+let cookieHp;
+let initialDamage;
+let newCookie;
 
-//根據所需的遊戲狀態建立類實例，初始化餅乾的狀態
-class GameState {
-  constructor(initialHp, gaming) {
-    this.isGaming = gaming;
-    this.cookieHp = initialHp;
-    this.currentCookieHp = initialHp;
-    // this.currentPhase = 1;
-  }
-
-  clickCookie(damage) {
-    this.currentCookieHp = this.currentCookieHp - damage;
-  }
-
-  cookieHpPercentage() {
-    return (this.currentCookieHp / this.cookieHp) * 100;
-  }
-}
-
-let newCookie = new GameState(cookieHp, true);
+mainMenuStartBtnEl.addEventListener("click", () => {
+  resetGame();
+  cookieHp = COOKIE_HP;
+  initialDamage = INITIAL_DAMAGE;
+  newCookie = createCookie(cookieHp);
+  //為了重置遊戲狀態，就和更新餅乾難度一樣，建立新的實例，尤其是在點擊開始按鈕的時候。
+  transitionScreen(mainMenuEl, pregameTimerEl);
+  startPregameTimer(gameScreenEl);
+});
 
 //以餅乾血量的百分比作為圖片切換的依據
 
@@ -34,19 +38,19 @@ const cookiePhases = [
 ];
 
 const clickCookie = () => {
+  console.log(newCookie, initialDamage);
   //當餅乾的血量小於0，創建新的實例並且增加血量和傷害，並且計算得分
-  if (newCookie.cookieHpPercentage() < 0) {
+  if (newCookie.getCookieHpPercentage() < 0) {
     cookieHp = cookieHp * 1.5;
-    newCookie = new GameState(cookieHp, true);
+    newCookie = createCookie(cookieHp);
     gameScreenImgEl.src = "./assets/phase1.png";
     ++initialDamage;
     ++scoreBoxScoreTextEl.textContent;
-    console.log(newCookie, initialDamage);
   }
 
   newCookie.clickCookie(initialDamage);
   for (const { phase, threshold } of cookiePhases) {
-    if (newCookie.cookieHpPercentage() <= threshold) {
+    if (newCookie.getCookieHpPercentage() <= threshold) {
       gameScreenImgEl.src = `./assets/phase${phase}.png`;
       // console.log(threshold, newCookie.cookieHpPercentage());
       //不需要使用break，因為每次phase和threshold固定，雖然條件判斷通過，但是phase固定，所以圖片並不會改變。

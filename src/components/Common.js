@@ -1,5 +1,3 @@
-import { startPregameTimer } from "./Timer.js";
-
 //selector
 
 export const titleScreenEl = document.querySelector(".title-screen");
@@ -29,10 +27,10 @@ export const scoreScreenFormEl = document.querySelector(".score-screen__form");
 // constants
 
 export const COOKIE_HP = 5;
-export const iNITIAL_DAMAGE = 1;
-export const iNITIAL_PREGAME_TIMER = Number(pregameTimerEl.textContent);
-export const iNITIAL_INGAME_TIMER = Number(scoreBoxTimerTextEl.textContent);
-export const INITAIL_SCORE = Number(scoreScreenEl.textContent);
+export const INITIAL_DAMAGE = 1;
+export const INITIAL_PREGAME_TIMER = Number(pregameTimerEl.textContent);
+export const INITIAL_INGAME_TIMER = Number(scoreBoxTimerTextEl.textContent);
+export const INITIAL_SCORE = Number(scoreBoxScoreTextEl.textContent);
 
 //transition
 
@@ -45,11 +43,6 @@ titleScreenEl.addEventListener("click", () => {
   transitionScreen(titleScreenEl, mainMenuEl);
 });
 
-mainMenuStartBtnEl.addEventListener("click", () => {
-  transitionScreen(mainMenuEl, pregameTimerEl);
-  startPregameTimer(gameScreenEl);
-});
-
 mainMenuRecordBtnEl.addEventListener("click", () => {
   transitionScreen(mainMenuEl, scoreScreenEl);
 });
@@ -57,3 +50,5 @@ mainMenuRecordBtnEl.addEventListener("click", () => {
 scoreScreenHomeBtnEL.addEventListener("click", () => {
   transitionScreen(scoreScreenEl, mainMenuEl);
 });
+
+//將開始遊戲的按鈕的事件移動到遊戲邏輯中以利遊戲狀態重置
