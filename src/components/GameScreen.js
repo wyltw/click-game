@@ -2,7 +2,7 @@ import {
   gameScreenImgEl,
   scoreBoxScoreTextEl,
   mainMenuEl,
-  mainMenuStartBtnEl,
+  startBlockButtonEl,
   pregameTimerEl,
   gameScreenEl,
   COOKIE_HP,
@@ -17,7 +17,7 @@ let cookieHp;
 let initialDamage;
 let newCookie;
 
-mainMenuStartBtnEl.addEventListener("click", () => {
+startBlockButtonEl.addEventListener("click", () => {
   resetGame();
   cookieHp = COOKIE_HP;
   initialDamage = INITIAL_DAMAGE;
@@ -70,30 +70,3 @@ const clickCookie = () => {
 };
 
 gameScreenImgEl.addEventListener("click", clickCookie);
-
-//一開始想到的實踐
-
-// if (newCookie.cookieHpPercentage() <= 80) {
-//   gameScreenImgEl.src = "./assets/phase2.png";
-// }
-// if (newCookie.cookieHpPercentage() <= 60) {
-//   gameScreenImgEl.src = "./assets/phase3.png";
-// }
-// if (newCookie.cookieHpPercentage() <= 40) {
-//   gameScreenImgEl.src = "./assets/phase4.png";
-// }
-// if (newCookie.cookieHpPercentage() <= 20) {
-//   gameScreenImgEl.src = "./assets/phase5.png";
-// }
-
-//嘗試的錯誤實踐
-// const cookiePhases = [80, 60, 40, 20, 0];
-// for (let i = 0; i < cookiePhases.length; i++) {
-//   console.log(`percentage ${newCookie.cookieHpPercentage()}`);
-//   console.log(newCookie.currentPhase);
-//   if (newCookie.cookieHpPercentage() <= cookiePhases[i]) {
-//     newCookie.currentPhase++;
-//     gameScreenImgEl.src = `./assets/phase${newCookie.currentPhase}.png`;
-//     break;
-//   }
-// }

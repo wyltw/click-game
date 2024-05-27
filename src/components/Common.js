@@ -2,11 +2,11 @@
 
 export const titleScreenEl = document.querySelector(".title-screen");
 export const mainMenuEl = document.querySelector(".main-menu");
-export const mainMenuStartBtnEl = document.querySelector(
-  ".main-menu__btn--start"
+export const startBlockButtonEl = document.querySelector(
+  ".block-button--start"
 );
-export const mainMenuRecordBtnEl = document.querySelector(
-  ".main-menu__btn--record"
+export const recordBlockButtonEl = document.querySelector(
+  ".block-button--record"
 );
 export const gameScreenEl = document.querySelector(".game-screen");
 export const gameScreenImgEl = document.querySelector(".game-screen__img");
@@ -18,9 +18,7 @@ export const scoreBoxTimerTextEl = document.querySelector(
   ".score-box__text--timer"
 );
 export const scoreScreenEl = document.querySelector(".score-screen");
-export const scoreScreenHomeBtnEL = document.querySelector(
-  ".score-screen__home-button"
-);
+export const homeBlockButtonEl = document.querySelector(".block-button--home");
 
 export const scoreScreenFormEl = document.querySelector(".score-screen__form");
 
@@ -43,11 +41,11 @@ titleScreenEl.addEventListener("click", () => {
   transitionScreen(titleScreenEl, mainMenuEl);
 });
 
-mainMenuRecordBtnEl.addEventListener("click", () => {
+recordBlockButtonEl.addEventListener("click", () => {
   transitionScreen(mainMenuEl, scoreScreenEl);
 });
 
-scoreScreenHomeBtnEL.addEventListener("click", () => {
+homeBlockButtonEl.addEventListener("click", () => {
   transitionScreen(scoreScreenEl, mainMenuEl);
 });
 

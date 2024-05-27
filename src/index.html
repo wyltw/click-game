@@ -33,10 +33,10 @@
           <p class="rules__desc">在時限內盡可能的快速點擊餅乾</p>
         </div>
         <div class="main-menu__buttons">
-          <button class="main-menu__button main-menu__btn--start">
+          <button class="block-button block-button--start">
             <i class="main-menu__icon fa-solid fa-play"></i>開始遊戲
           </button>
-          <button class="main-menu__button main-menu__btn--record">
+          <button class="block-button block-button--record">
             <i class="main-menu__icon fa-solid fa-ranking-star"></i>得分記錄
           </button>
         </div>
@@ -58,7 +58,7 @@
         </ul>
       </section>
       <section class="score-screen hidden">
-        <div class="ranking">
+        <div class="ranking hidden">
           <h2 class="ranking__title">得分榜</h2>
           <p class="ranking__info">目前沒有記錄</p>
           <ul class="ranking__list">
@@ -66,10 +66,11 @@
           </ul>
         </div>
         <form class="score-screen__form hidden">
-          <label class="score-screen_label">玩家名稱：</label>
-          <input type="text" class="score-screen__input" />
+          <label class="score-screen__label"
+            >玩家名稱： <input type="text" class="score-screen__input"
+          /></label>
         </form>
-        <button class="score-screen__home-button">
+        <button class="block-button block-button--home">
           <i class="fa-solid fa-house score-screen__icon"></i>回主選單
         </button>
       </section>

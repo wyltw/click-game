@@ -4,6 +4,7 @@ import {
   transitionScreen,
   gameScreenEl,
   scoreScreenEl,
+  scoreScreenFormEl,
 } from "./Common.js";
 
 const startIngameTimer = () => {
@@ -15,6 +16,7 @@ const startIngameTimer = () => {
       transitionScreen(gameScreenEl, scoreScreenEl);
       //比起遊戲結束時重置，開始重置也可以
       scoreBoxTimerTextEl.classList.remove("timer-warning");
+      scoreScreenFormEl.classList.remove("hidden");
     }
     if (scoreBoxTimerTextEl.textContent < 4) {
       scoreBoxTimerTextEl.classList.add("timer-warning");
