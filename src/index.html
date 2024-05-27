@@ -67,8 +67,14 @@
         </div>
         <form class="score-screen__form hidden">
           <label class="score-screen__label"
-            >玩家名稱： <input type="text" class="score-screen__input"
+            >玩家名稱：
+            <span class="invalid-text invalid-text--name"></span>
+            <input
+              type="text"
+              placeholder="輸入名稱..."
+              class="score-screen__input score-screen__input--name"
           /></label>
+          <button class="button score-screen__submit-button">確認</button>
         </form>
         <button class="block-button block-button--home">
           <i class="fa-solid fa-house score-screen__icon"></i>回主選單

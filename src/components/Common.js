@@ -19,8 +19,17 @@ export const scoreBoxTimerTextEl = document.querySelector(
 );
 export const scoreScreenEl = document.querySelector(".score-screen");
 export const homeBlockButtonEl = document.querySelector(".block-button--home");
-
+export const rankingEl = document.querySelector(".ranking");
 export const scoreScreenFormEl = document.querySelector(".score-screen__form");
+export const scoreScreenNameInputEl = document.querySelector(
+  ".score-screen__input--name"
+);
+
+export const invalidNameTextEl = document.querySelector(".invalid-text--name");
+
+export const scoreScreenSubmitButtonEl = document.querySelector(
+  ".core-screen__submit-button"
+);
 
 // constants
 
@@ -42,11 +51,33 @@ titleScreenEl.addEventListener("click", () => {
 });
 
 recordBlockButtonEl.addEventListener("click", () => {
+  rankingEl.classList.remove("hidden");
   transitionScreen(mainMenuEl, scoreScreenEl);
 });
 
 homeBlockButtonEl.addEventListener("click", () => {
+  scoreScreenFormEl.classList.add("hidden");
   transitionScreen(scoreScreenEl, mainMenuEl);
+});
+
+scoreScreenFormEl.addEventListener("submit", (event) => {
+  event.preventDefault();
+  //guard clauses
+  if (!scoreScreenNameInputEl.value.trim().length) {
+    invalidNameTextEl.textContent = "請為自己想一個好名字！";
+    setTimeout(() => {
+      invalidNameTextEl.textContent = "";
+    }, 2000);
+    return;
+  }
+  if (scoreScreenNameInputEl.value.length > 10) {
+    invalidNameTextEl.textContent = "太...太長了！";
+    setTimeout(() => {
+      invalidNameTextEl.textContent = "";
+    }, 2000);
+    return;
+  }
+  invalidNameTextEl.textContent = "";
 });
 
 //將開始遊戲的按鈕的事件移動到遊戲邏輯中以利遊戲狀態重置
