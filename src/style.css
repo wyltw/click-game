@@ -310,7 +310,7 @@ input {
   padding: 5px 10px;
   outline-color: #523d45;
   width: 60%;
-  transition: all 0.2s;
+  transition: all 0.4s;
   font-weight: initial;
 }
 .score-screen__input:focus {

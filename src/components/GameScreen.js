@@ -1,31 +1,5 @@
-import {
-  gameScreenImgEl,
-  scoreBoxScoreTextEl,
-  mainMenuEl,
-  startBlockButtonEl,
-  pregameTimerEl,
-  gameScreenEl,
-  COOKIE_HP,
-  INITIAL_DAMAGE,
-  transitionScreen,
-} from "./Common.js";
-import { startPregameTimer } from "./Timer.js";
-import { createCookie } from "./GameState.js";
-import { resetGame } from "./ResetGame.js";
-
-let cookieHp;
-let initialDamage;
-let newCookie;
-
-startBlockButtonEl.addEventListener("click", () => {
-  resetGame();
-  cookieHp = COOKIE_HP;
-  initialDamage = INITIAL_DAMAGE;
-  newCookie = createCookie(cookieHp);
-  //為了重置遊戲狀態，就和更新餅乾難度一樣，建立新的實例，尤其是在點擊開始按鈕的時候。
-  transitionScreen(mainMenuEl, pregameTimerEl);
-  startPregameTimer(gameScreenEl);
-});
+import { gameScreenImgEl, scoreBoxScoreTextEl, state } from "./Common.js";
+import startNewStage from "./startNewStage.js";
 
 //以餅乾血量的百分比作為圖片切換的依據
 
@@ -38,30 +12,26 @@ const cookiePhases = [
 ];
 
 const clickCookie = () => {
-  console.log(newCookie, initialDamage);
+  console.log(state.cookieHp, state.initialDamage);
   //當餅乾的血量小於0，創建新的實例並且增加血量和傷害，並且計算得分
-  if (newCookie.getCookieHpPercentage() < 0) {
-    cookieHp = cookieHp * 1.5;
-    newCookie = createCookie(cookieHp);
-    gameScreenImgEl.src = "./assets/phase1.png";
-    ++initialDamage;
-    ++scoreBoxScoreTextEl.textContent;
+  if (state.cookie.getCookieHpPercentage() < 0) {
+    startNewStage();
   }
 
-  newCookie.clickCookie(initialDamage);
+  state.cookie.clickCookie(state.initialDamage);
   for (const { phase, threshold } of cookiePhases) {
-    if (newCookie.getCookieHpPercentage() <= threshold) {
+    if (state.cookie.getCookieHpPercentage() <= threshold) {
       gameScreenImgEl.src = `./assets/phase${phase}.png`;
-      // console.log(threshold, newCookie.cookieHpPercentage());
-      //不需要使用break，因為每次phase和threshold固定，雖然條件判斷通過，但是phase固定，所以圖片並不會改變。
-      //第一次
+      // console.log(threshold, state.cookie.getCookieHpPercentage());
+      //不需要使用break，因為每次迭代phase和threshold固定，雖然血量低於閾值的條件判斷通過，但是通過時的phase固定，所以圖片並不會改變。直到最後一次迭代的條件通過，也就是血量低於閾值的時候，才變更新的圖片，且接下來因條件不符所以不會更換圖片。
+      //第一次點擊
       // 80 80
 
-      //第二次
+      //第二次點擊
       // 60 80
       // 60 60
 
-      // 第三次
+      // 第三次點擊
       // 40 80
       // 40 60
       // 40 40
