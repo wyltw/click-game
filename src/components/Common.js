@@ -1,5 +1,6 @@
-//selector
+import renderRankingList from "./Ranking.js";
 
+//selector
 export const titleScreenEl = document.querySelector(".title-screen");
 export const mainMenuEl = document.querySelector(".main-menu");
 export const startBlockButtonEl = document.querySelector(
@@ -20,13 +21,15 @@ export const scoreBoxTimerTextEl = document.querySelector(
 export const scoreScreenEl = document.querySelector(".score-screen");
 export const homeBlockButtonEl = document.querySelector(".block-button--home");
 export const rankingEl = document.querySelector(".ranking");
+export const rankingListTitleEl = document.querySelector(".ranking__title");
+export const rankingListEl = document.querySelector(".ranking__list");
+export const rankingInfoEl = document.querySelector(".ranking__info");
 export const scoreScreenFormEl = document.querySelector(".score-screen__form");
 export const scoreScreenNameInputEl = document.querySelector(
   ".score-screen__input--name"
 );
 
 export const invalidNameTextEl = document.querySelector(".invalid-text--name");
-
 export const scoreScreenSubmitButtonEl = document.querySelector(
   ".core-screen__submit-button"
 );

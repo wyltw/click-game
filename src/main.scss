@@ -386,6 +386,10 @@ input {
     font-size: 18px;
     margin-top: 20px;
   }
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 //utility

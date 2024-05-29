@@ -9,6 +9,7 @@ import {
   pregameTimerEl,
   rankingEl,
 } from "./Common.js";
+import renderRankingList from "./Ranking.js";
 import startNewGame from "./startNewGame.js";
 import { startPregameTimer } from "./Timer.js";
 
@@ -33,6 +34,7 @@ titleScreenEl.addEventListener("click", () => {
 
 recordBlockButtonEl.addEventListener("click", () => {
   showRankingEl();
+  renderRankingList();
   renderScreen(mainMenuEl, scoreScreenEl);
 });
 

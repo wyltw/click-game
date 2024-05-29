@@ -8,9 +8,11 @@ import {
 
 import { showInvalidTnfo } from "./Error.js";
 import { showRankingEl } from "./Screens.js";
-import getLocalStorage from "./getLocalStorage.js";
+import renderRankingList from "./Ranking.js";
+import savePlayerScore from "./savePlayerScore.js";
 
-const savePlayerScore = (name, score) => {
+const handleSubmit = (event) => {
+  event.preventDefault();
   //guard clauses
   if (!scoreScreenNameInputEl.value.trim().length) {
     showInvalidTnfo(invalidNameTextEl, "請為自己想一個好名字！");
@@ -20,22 +22,15 @@ const savePlayerScore = (name, score) => {
     showInvalidTnfo(invalidNameTextEl, "太...太長了！");
     return;
   }
-  const playerScore = {};
-  playerScore.name = name;
-  playerScore.score = score;
-  const newPlayerScoreList = [...state.playerScoreList, playerScore];
+
   if (newPlayerScoreList.length > state.playerScoreList.length) {
-    localStorage.setItem("playerScores", JSON.stringify(newPlayerScoreList));
+    savePlayerScore(
+      scoreScreenNameInputEl.value,
+      scoreBoxScoreTextEl.textContent
+    );
     showRankingEl();
-    getLocalStorage();
-    console.log(state.playerScoreList);
+    renderRankingList();
   }
 };
 
-scoreScreenFormEl.addEventListener("submit", (event) => {
-  event.preventDefault();
-  savePlayerScore(
-    scoreScreenNameInputEl.value,
-    scoreBoxScoreTextEl.textContent
-  );
-});
+scoreScreenFormEl.addEventListener("submit", handleSubmit);
