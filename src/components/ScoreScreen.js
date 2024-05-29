@@ -7,6 +7,8 @@ import {
 } from "./Common.js";
 
 import { showInvalidTnfo } from "./Error.js";
+import { showRankingEl } from "./Screens.js";
+import getLocalStorage from "./getLocalStorage.js";
 
 const savePlayerScore = (name, score) => {
   //guard clauses
@@ -21,8 +23,13 @@ const savePlayerScore = (name, score) => {
   const playerScore = {};
   playerScore.name = name;
   playerScore.score = score;
-  state.playerScoreList.push(playerScore);
-  localStorage.setItem("playerScores", JSON.stringify(state.playerScoreList));
+  const newPlayerScoreList = [...state.playerScoreList, playerScore];
+  if (newPlayerScoreList.length > state.playerScoreList.length) {
+    localStorage.setItem("playerScores", JSON.stringify(newPlayerScoreList));
+    showRankingEl();
+    getLocalStorage();
+    console.log(state.playerScoreList);
+  }
 };
 
 scoreScreenFormEl.addEventListener("submit", (event) => {
