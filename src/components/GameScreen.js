@@ -21,7 +21,7 @@ const clickCookie = () => {
   state.cookie.clickCookie(state.initialDamage);
   for (const { phase, threshold } of cookiePhases) {
     if (state.cookie.getCookieHpPercentage() <= threshold) {
-      gameScreenImgEl.src = `./assets/phase${phase}.png`;
+      gameScreenImgEl.src = `./src/assets/phase${phase}.png`;
       // console.log(threshold, state.cookie.getCookieHpPercentage());
       //不需要使用break，因為每次迭代phase和threshold固定，雖然血量低於閾值的條件判斷通過，但是通過時的phase固定，所以圖片並不會改變。直到最後一次迭代的條件通過，也就是血量低於閾值的時候，才變更新的圖片，且接下來因條件不符所以不會更換圖片。
       //第一次點擊

@@ -21,6 +21,6 @@ const startNewGame = () => {
   scoreBoxTimerTextEl.classList.remove("timer-warning");
   scoreBoxScoreTextEl.textContent = INITIAL_SCORE;
   scoreBoxTimerTextEl.textContent = INITIAL_INGAME_TIMER;
-  gameScreenImgEl.src = "./assets/phase1.png";
+  gameScreenImgEl.src = "./src/assets/phase1.png";
 };
 export default startNewGame;
