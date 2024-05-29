@@ -61,7 +61,10 @@
         <div class="ranking hidden">
           <h2 class="ranking__title">得分榜</h2>
           <p class="ranking__info">目前沒有記錄</p>
-          <ol class="ranking__list"></ol>
+          <ol class="ranking__list">
+            <i class="fa-solid fa-star ranking__icon"></i>
+          </ol>
+          <button class="button button--reset">清除記錄</button>
         </div>
         <form class="score-screen__form hidden">
           <label class="score-screen__label"
@@ -72,7 +75,7 @@
               placeholder="輸入名稱..."
               class="score-screen__input score-screen__input--name"
           /></label>
-          <button class="button score-screen__submit-button">確認</button>
+          <button class="button button--submit">確認</button>
         </form>
         <button class="block-button block-button--home">
           <i class="fa-solid fa-house score-screen__icon"></i>回主選單

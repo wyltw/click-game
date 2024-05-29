@@ -23,14 +23,12 @@ const handleSubmit = (event) => {
     return;
   }
 
-  if (newPlayerScoreList.length > state.playerScoreList.length) {
-    savePlayerScore(
-      scoreScreenNameInputEl.value,
-      scoreBoxScoreTextEl.textContent
-    );
-    showRankingEl();
-    renderRankingList();
-  }
+  savePlayerScore(
+    scoreScreenNameInputEl.value,
+    scoreBoxScoreTextEl.textContent
+  );
+  showRankingEl();
+  renderRankingList();
 };
 
 scoreScreenFormEl.addEventListener("submit", handleSubmit);

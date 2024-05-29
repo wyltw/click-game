@@ -30,9 +30,8 @@ export const scoreScreenNameInputEl = document.querySelector(
 );
 
 export const invalidNameTextEl = document.querySelector(".invalid-text--name");
-export const scoreScreenSubmitButtonEl = document.querySelector(
-  ".core-screen__submit-button"
-);
+export const submitButtonEl = document.querySelector(".button--submit");
+export const resetButtonEl = document.querySelector(".button--reset");
 
 // constants
 
