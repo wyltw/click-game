@@ -124,7 +124,7 @@ input {
 
 .container {
   width: 100%;
-  height: calc(100% - 136px);
+  height: calc(100% - 136px - 25px);
   display: flex;
   justify-content: center;
 }
@@ -351,6 +351,12 @@ input {
 .ranking__info {
   margin-top: 20px;
   font-size: 18px;
+}
+
+.footer {
+  background-color: #f5ede2;
+  display: flex;
+  justify-content: center;
 }
 
 .hidden {
