@@ -7,14 +7,24 @@ import {
   homeBlockButtonEl,
   startBlockButtonEl,
   pregameTimerEl,
-  gameScreenEl,
+  rankingEl,
 } from "./Common.js";
 import startNewGame from "./startNewGame.js";
 import { startPregameTimer } from "./Timer.js";
 
-const renderScreen = (hideEl, showEl) => {
+export const renderScreen = (hideEl, showEl) => {
   hideEl.classList.add("hidden");
   showEl.classList.remove("hidden");
+};
+
+export const showRankingEl = (boolean = true) => {
+  if (boolean) {
+    scoreScreenFormEl.classList.add("hidden");
+    rankingEl.classList.remove("hidden");
+  } else {
+    rankingEl.classList.add("hidden");
+    scoreScreenFormEl.classList.remove("hidden");
+  }
 };
 
 titleScreenEl.addEventListener("click", () => {
@@ -22,19 +32,17 @@ titleScreenEl.addEventListener("click", () => {
 });
 
 recordBlockButtonEl.addEventListener("click", () => {
-  rankingEl.classList.remove("hidden");
+  showRankingEl();
   renderScreen(mainMenuEl, scoreScreenEl);
 });
 
 homeBlockButtonEl.addEventListener("click", () => {
-  scoreScreenFormEl.classList.add("hidden");
+  showRankingEl(false);
   renderScreen(scoreScreenEl, mainMenuEl);
 });
 
 startBlockButtonEl.addEventListener("click", () => {
   startNewGame();
   renderScreen(mainMenuEl, pregameTimerEl);
-  startPregameTimer(gameScreenEl);
+  startPregameTimer();
 });
-
-export default renderScreen;
