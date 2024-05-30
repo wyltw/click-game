@@ -1,5 +1,3 @@
-import renderRankingList from "./Ranking.js";
-
 //selector
 export const titleScreenEl = document.querySelector(".title-screen");
 export const mainMenuEl = document.querySelector(".main-menu");
