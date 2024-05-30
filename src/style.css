@@ -151,14 +151,20 @@ input {
   }
 }
 .title-screen__img {
+  flex-shrink: 0;
   margin-top: 75px;
   max-width: 40%;
   object-fit: contain;
   animation: spin 10s linear infinite;
 }
-@media (max-width: 1180px) {
+@media (max-width: 580px) {
   .title-screen__img {
-    max-width: 45%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 375px) {
+  .title-screen__img {
+    max-width: 70%;
   }
 }
 .title-screen__text {
@@ -225,13 +231,23 @@ input {
 }
 .game-screen__img {
   margin-top: -30px;
-  max-width: 40%;
+  max-width: 100%;
   object-fit: contain;
   transform: translateY(0px);
   transition: 0.2s all;
 }
 .game-screen__img:active {
   transform: translateY(30px);
+}
+@media (max-width: 580px) {
+  .game-screen__img {
+    max-width: 50%;
+  }
+}
+@media (max-width: 375px) {
+  .game-screen__img {
+    max-width: 70%;
+  }
 }
 
 .score-box {

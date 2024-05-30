@@ -171,15 +171,18 @@ input {
       max-width: 90%;
     }
   }
+
   &__img {
+    flex-shrink: 0;
     margin-top: 75px;
     max-width: 40%;
     object-fit: contain;
     animation: spin 10s linear infinite;
-    @media (max-width: 1180px) {
-      max-width: 45%;
+    @media (max-width: 580px) {
+      max-width: 50%;
     }
     @media (max-width: 375px) {
+      max-width: 70%;
     }
   }
   &__text {
@@ -249,12 +252,18 @@ input {
   align-items: center;
   &__img {
     margin-top: -30px;
-    max-width: 40%;
+    max-width: 100%;
     object-fit: contain;
     transform: translateY(0px);
     transition: 0.2s all;
     &:active {
       transform: translateY(+30px);
+    }
+    @media (max-width: 580px) {
+      max-width: 50%;
+    }
+    @media (max-width: 375px) {
+      max-width: 70%;
     }
   }
 }
