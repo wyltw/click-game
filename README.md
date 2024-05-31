@@ -2,7 +2,7 @@
 
 * 使用原生JavaScript製作的點擊小遊戲
 
-![image](https://imgur.com/a/9EZK260)
+![image](https://i.imgur.com/uyvO5zP.png)
 
 ## Live Demo:
 
