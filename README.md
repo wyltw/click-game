@@ -2,7 +2,7 @@
 
 * 使用原生JavaScript製作的點擊小遊戲
 
-![image](https://hackmd.io/_uploads/H11QxkLNA.png)
+![image](https://imgur.com/a/9EZK260)
 
 ## Live Demo:
 
