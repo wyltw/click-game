@@ -39,7 +39,6 @@ recordBlockButtonEl.addEventListener("click", () => {
 });
 
 homeBlockButtonEl.addEventListener("click", () => {
-  showRankingEl(false);
   renderScreen(scoreScreenEl, mainMenuEl);
 });
 

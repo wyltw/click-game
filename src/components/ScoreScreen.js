@@ -3,7 +3,6 @@ import {
   scoreScreenFormEl,
   scoreScreenNameInputEl,
   invalidNameTextEl,
-  state,
 } from "./Common.js";
 
 import { showInvalidTnfo } from "./Error.js";
