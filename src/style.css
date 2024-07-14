@@ -9,18 +9,14 @@
 html {
   width: 100%;
   height: 100%;
-  padding: 0 20%;
   display: flex;
   background: linear-gradient(307deg, rgb(2, 0, 36) 0%, rgb(30, 58, 95) 70%);
 }
-@media (max-width: 980px) {
-  html {
-    padding: 0;
-  }
-}
 
 .app {
+  max-width: 1000px;
   width: 100%;
+  margin: 0 auto;
   height: 100%;
   font-family: "Poppins", sans-serif;
   box-shadow: 0px 0px 10px 0px #938e88;
@@ -41,7 +37,7 @@ button {
   padding: 5px 15px;
   background-color: #5e454e;
   color: rgba(245, 237, 226, 0.8);
-  font-size: 16px;
+  font-size: 1rem;
   border-radius: 5px;
   transition: all 0.2s;
 }
@@ -57,7 +53,7 @@ button {
   padding: 15px 0;
   background-color: #5e454e;
   color: rgba(245, 237, 226, 0.8);
-  font-size: 18px;
+  font-size: 1.125rem;
   border-radius: 5px;
   transition: all 0.2s;
 }
@@ -99,16 +95,6 @@ input {
   100% {
     opacity: 100%;
     transform: translateY(0px);
-  }
-}
-@keyframes count-down {
-  0% {
-    opacity: 0%;
-    transform: translateY(-30px) scale(1.5);
-  }
-  100% {
-    opacity: 100%;
-    transform: translateY(0px) scale(1);
   }
 }
 @keyframes count-down {
@@ -171,19 +157,19 @@ input {
   margin-top: auto;
   margin-bottom: auto;
   color: #785964;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 400;
   animation: fade-out 3s linear infinite alternate;
 }
 @media (max-width: 580px) {
   .title-screen__text {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 }
 
 .rules {
   align-self: center;
-  border: solid #523d45 3px;
+  border: solid #5e454e 3px;
   padding: 20px;
   background-color: #f5ede2;
   border-radius: 5px;
@@ -195,7 +181,7 @@ input {
 .rules__desc {
   margin-top: 20px;
   color: #1e3a5f;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.7;
 }
 .rules__icon {
@@ -209,15 +195,20 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  row-gap: 3.125rem;
+  row-gap: 50px;
 }
 .main-menu__icon {
   margin-right: 7px;
 }
+@media (max-width: 500px) {
+  .main-menu {
+    padding: 0 10%;
+  }
+}
 
 .pregame-timer {
   margin-top: 75px;
-  color: #523d45;
+  color: #5e454e;
   font-size: 8rem;
   animation: timer 1s infinite backwards;
 }
@@ -255,7 +246,7 @@ input {
   padding: 10px 0;
   display: flex;
   justify-content: space-around;
-  border: solid #523d45 3px;
+  border: solid #5e454e 3px;
   background-color: #f5ede2;
   border-radius: 5px;
   box-shadow: 2px 2px 10px #938e88;
@@ -278,7 +269,7 @@ input {
   color: #1e3a5f;
   font-size: 2rem;
   text-align: center;
-  border-right: #523d45 3px solid;
+  border-right: #5e454e 3px solid;
 }
 .score-box__item:last-child {
   border-right: 0;
@@ -299,27 +290,12 @@ input {
   align-items: center;
   justify-content: space-around;
 }
-.score-screen__home-button {
-  display: block;
-  width: 100%;
-  padding: 15px 0;
-  background-color: #5e454e;
-  color: rgba(245, 237, 226, 0.8);
-  font-size: 18px;
-  border-radius: 5px;
-  transition: all 0.2s;
-}
-.score-screen__home-button:hover, .score-screen__home-button:focus {
-  background-color: #785964;
-  color: #f5ede2;
-  cursor: pointer;
-}
 .score-screen__form {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  border: solid #523d45 3px;
+  border: solid #5e454e 3px;
   padding: 20px;
   background-color: #f5ede2;
   border-radius: 5px;
@@ -331,14 +307,14 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
 }
 .score-screen__input {
   margin-top: 5px;
   border-radius: 50px;
   padding: 5px 10px;
-  outline-color: #523d45;
+  outline-color: #5e454e;
   width: 60%;
   transition: all 0.4s;
   font-weight: initial;
@@ -347,7 +323,7 @@ input {
   width: 100%;
 }
 .score-screen__input::placeholder {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-style: italic;
 }
 .score-screen__icon {
@@ -357,7 +333,7 @@ input {
 .invalid-text {
   margin-top: 5px;
   color: rgb(189, 0, 0);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -365,7 +341,7 @@ input {
   width: 100%;
   color: #1e3a5f;
   text-align: center;
-  border: solid #523d45 3px;
+  border: solid #5e454e 3px;
   padding: 20px;
   background-color: #f5ede2;
   border-radius: 5px;
@@ -375,12 +351,12 @@ input {
   padding: 10px 0;
   display: flex;
   flex-direction: column;
-  font-size: 18px;
+  font-size: 1.125rem;
   border-bottom: 1px dotted #1e3a5f;
 }
 .ranking__info {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .footer {
