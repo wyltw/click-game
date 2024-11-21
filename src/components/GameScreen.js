@@ -1,4 +1,4 @@
-import { gameScreenImgEl, scoreBoxScoreTextEl, state } from "./Common.js";
+import { gameScreenImgEl, state } from "./Common.js";
 import startNewStage from "./startNewStage.js";
 
 //以餅乾血量的百分比作為圖片切換的依據
@@ -12,7 +12,6 @@ const cookiePhases = [
 ];
 
 const clickCookie = () => {
-  console.log(state.cookieHp, state.initialDamage);
   //當餅乾的血量小於0，創建新的實例並且增加血量和傷害，並且計算得分
   if (state.cookie.getCookieHpPercentage() < 0) {
     startNewStage();

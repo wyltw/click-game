@@ -57,7 +57,7 @@ button {
   &:focus {
     background-color: $secondary;
     color: rgba($primary, 1);
-    cursor: point;
+    cursor: pointer;
   }
 }
 
@@ -74,7 +74,7 @@ button {
   &:focus {
     background-color: $secondary;
     color: rgba($primary, 1);
-    cursor: point;
+    cursor: pointer;
   }
   &:nth-child(n + 2) {
     margin-top: 10px;

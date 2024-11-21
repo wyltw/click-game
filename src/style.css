@@ -44,7 +44,7 @@ button {
 .button:hover, .button:focus {
   background-color: #785964;
   color: #f5ede2;
-  cursor: point;
+  cursor: pointer;
 }
 
 .block-button {
@@ -60,7 +60,7 @@ button {
 .block-button:hover, .block-button:focus {
   background-color: #785964;
   color: #f5ede2;
-  cursor: point;
+  cursor: pointer;
 }
 .block-button:nth-child(n+2) {
   margin-top: 10px;
